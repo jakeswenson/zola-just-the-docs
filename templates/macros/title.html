@@ -1,0 +1,11 @@
+{% macro site_title() -%}
+{% if config.logo -%}
+  <div class="site-logo"></div>
+{%- else -%}
+  {{ config.title -}}
+{% endif -%}
+{% endmacro render %}
+
+{% macro page() -%}
+{{ page.title | default(value=section.title | default(value='')) }}
+{%- endmacro name %}
