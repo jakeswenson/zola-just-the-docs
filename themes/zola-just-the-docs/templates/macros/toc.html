@@ -1,0 +1,24 @@
+{% macro toc_item(entry) -%}
+  <li>
+    <a href="{{entry.permalink | safe}}">{{ entry.title }}</a>
+    {%- if entry.children %}
+    <ol>
+      {% for child in entry.children -%}
+        {{ toc::toc_item(entry=child) }}
+      {%- endfor %}
+    </ol>
+    {%- endif %}
+  </li>
+{% endmacro toc_item %}
+
+{% macro toc() -%}
+{% if page.toc or section.toc -%}
+<h2 class="text-delta" id="table-of-contents">Table of contents</h2>
+<ol>
+  {% set headers = page.toc | default(value=section.toc) -%}
+  {% for h1 in headers -%}
+  {{ toc::toc_item(entry=h1) }}
+  {%- endfor %}
+</ol>
+{%- endif %}
+{%- endmacro toc %}

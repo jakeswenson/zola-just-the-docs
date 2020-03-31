@@ -1,0 +1,85 @@
+{% macro if_is_active_page(node, content) -%}
+  {% if current_path and current_path == node.path -%}
+    {{content-}}
+  {% else -%}
+    {% set ancestors = page.ancestors | default(value=section.ancestors | default(value=[]) ) -%}
+    {% if ancestors and ancestors is containing(node.relative_path) -%}
+      {{content-}}
+    {% endif -%}
+  {% endif -%}
+{% endmacro %}
+
+{% macro nav_node(node) -%}
+  {# <!--
+    state = {{ nav::if_is_active_page(node=node,content=' active') }}
+    path = {{node.path | safe }} - {{ node.relative_path | safe }}
+    current_path = {{ current_path | default(value="") | safe }}
+    {% if paged.ancestors or section.ancestors %}
+    ancestors = {{ page.ancestors | default(value=section.ancestors) | json_encode |safe }}
+    {% endif %}
+  --> #}
+  <li class="navigation-list-item{{ nav::if_is_active_page(node=node,content=' active') }}">
+    <a href="/{{ node.path | safe }}" class="navigation-list-link{{ nav::if_is_active_page(node=node,content=' active') }}">{{ node.title }}</a>
+    {%- if node.subsections or node.pages -%}
+      <ul class="navigation-list-child-list ">
+        {%- if node.subsections -%}
+          {% for child_section in node.subsections -%}
+            {{ nav::nav_node(node=get_section(path=child_section)) -}}
+          {% endfor -%}
+        {% endif -%}
+        {% if node.pages -%}
+          {% for child_page in node.pages -%}
+            {{ nav::nav_node(node=child_page) -}}
+          {% endfor -%}
+        {% endif -%}
+      </ul>
+    {% endif -%}
+  </li>
+{%- endmacro nav_node %}
+
+{% macro side_nav() %}
+  {% set top_section = get_section(path="_index.md") -%}
+  <nav role="navigation" aria-label="Main navigation">
+    <ul class="navigation-list">
+      {% for subsection in top_section.subsections -%}
+        {% set subsection = get_section(path=subsection) -%}
+        {{ nav::nav_node(node=subsection) -}} {# BUG: Zola - should be using self:: #}
+      {%- endfor -%}
+      {% for child_page in top_section.pages -%}
+        {{ nav::nav_node(node=child_page) -}} {# BUG: Zola - should be using self:: #}
+      {%- endfor -%}
+    </ul>
+  </nav>
+{% endmacro side_nav %}
+
+{% macro section_contents() -%}
+{%- if section.pages -%}
+  <hr>
+  <h2 class="text-delta">Section contents</h2>
+  {%- set children_list = section.pages -%}
+  <ul>
+    {% for child in children_list -%}
+    <li>
+      <a href="{{ child.permalink }}">{{ child.title }}</a>{% if child.description %} - {{ child.description }}{% endif %}
+    </li>
+    {%- endfor -%}
+  </ul>
+{%- endif %}
+{%- endmacro section_contents %}
+
+{% macro breadcrumbs() -%}
+{% if current_url and current_url != "/" %}
+  {% set ancestors = page.ancestors | default(value=section.ancestors) -%}
+  {% if ancestors -%}
+    <nav class="breadcrumb-nav">
+      <ol class="breadcrumb-nav-list">
+        {% for ancestor in ancestors -%}
+          {% set ancestor = get_section(path=ancestor) -%}
+          <li class="breadcrumb-nav-list-item"><a href="/{{ ancestor.path | safe }}">{{ ancestor.title | default(value=config.title) }}</a></li>
+        {% endfor -%}
+        <li class="breadcrumb-nav-list-item"><span>{{ page.title | default(value=section.title) }}</span></li>
+      </ol>
+    </nav>
+  {% endif -%}
+{% endif -%}
+{% endmacro breadcrumbs %}
