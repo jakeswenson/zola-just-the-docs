@@ -53,16 +53,18 @@
 {% endmacro side_nav %}
 
 {% macro section_contents() -%}
-<hr>
-<h2 class="text-delta">Table of contents</h2>
-{%- set children_list = section.pages -%}
-<ul>
-  {% for child in children_list -%}
-  <li>
-    <a href="{{ child.permalink }}">{{ child.title }}</a>{% if child.description %} - {{ child.description }}{% endif %}
-  </li>
-  {%- endfor -%}
-</ul>
+{%- if section.pages -%}
+  <hr>
+  <h2 class="text-delta">Section contents</h2>
+  {%- set children_list = section.pages -%}
+  <ul>
+    {% for child in children_list -%}
+    <li>
+      <a href="{{ child.permalink }}">{{ child.title }}</a>{% if child.description %} - {{ child.description }}{% endif %}
+    </li>
+    {%- endfor -%}
+  </ul>
+{%- endif %}
 {%- endmacro section_contents %}
 
 {% macro breadcrumbs() -%}
