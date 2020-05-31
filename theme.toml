@@ -1,11 +1,11 @@
-name = "just-the-docs-zola"
+name = "just-the-docs"
 description = "A port of the great `Just the Docs` theme from jekyll"
 license = "MIT"
 homepage = "https://github.com/jakeswenson/zola-just-the-docs"
 # The minimum version of Zola required
 min_version = "0.10.0"
 # An optional live demo URL
-demo = ""
+demo = "https://zola-jtd-demo.jakeswenson.now.sh/"
 
 # Any variable there can be overriden in the end user `config.toml`
 # You don't need to prefix variables by the theme name but as this will
@@ -13,6 +13,7 @@ demo = ""
 # Use snake_casing to be consistent with the rest of Zola
 [extra]
 links = []
+footer = ""
 disable_heading_anchors = false
 
 # The theme author info: you!

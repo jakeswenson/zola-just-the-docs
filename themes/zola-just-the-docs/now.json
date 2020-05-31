@@ -1,9 +1,0 @@
-{
-  "version": 2,
-  "name": "zola-just-the-docs",
-  "build": {
-    "env": {
-      "ZOLA_VERSION": "0.10.1"
-    }
-  }
-}
