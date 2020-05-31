@@ -14,7 +14,6 @@ demo = "https://zola-jtd-demo.jakeswenson.now.sh/"
 [extra]
 links = []
 footer = ""
-disable_heading_anchors = false
 
 # The theme author info: you!
 [author]

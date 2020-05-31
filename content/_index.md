@@ -2,6 +2,7 @@
 title = 'Home'
 weight = 1
 description = "Just the Docs is a responsive Jekyll theme with built-in search that is easily customizable and hosted on GitHub Pages."
+insert_anchor_links = "left"
 +++
 
 # Focus on writing good documentation

@@ -66,11 +66,7 @@
               {% filter replace(from='</table>',to='</table></div>') -%}
                 {# BUG: tera - should be using block content in here #}
                 {%- set content = page.content | default(value=section.content | safe) | safe -%}
-                {% if not config.extra.disable_heading_anchors -%}
-                  {{ anchors::build(html=content,before_heading=true,anchor_body='<svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#link"></use></svg>',anchor_class="anchor-heading") -}}
-                {% else -%}
-                  {{content | safe -}}
-                {% endif -%}
+                {{content | safe -}}
               {%- endfilter %}
             {%- endfilter -%}
           {%- endfilter -%}

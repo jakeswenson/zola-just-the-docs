@@ -41,12 +41,10 @@ links = [
 
 ## Heading anchor links
 
-```yaml
+```toml
 # Heading anchor links appear on hover over h1-h6 tags in page content
 # allowing users to deep link to a particular heading on a page.
-#
-# Supports true (default) or false/nil
-heading_anchors: true
+insert_anchor_links = true
 ```
 
 ## Footer content
