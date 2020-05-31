@@ -16,3 +16,8 @@ git subtree add --prefix themes/zola-just-the-docs zola-jtd master
 ```
 
 # Update
+
+```bash
+git fetch zola-jtd
+git subtree merge --prefix themes/zola-just-the-docs zola-jtd/master
+```
