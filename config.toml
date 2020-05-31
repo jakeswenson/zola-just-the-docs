@@ -1,7 +1,7 @@
 title = "Zola Just The Docs"
 default_language = "en"
 # The URL the site will be built for
-base_url = "https://example.com"
+base_url = "https://zola-just-the-docs.now.sh/"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
