@@ -10,17 +10,14 @@ weight = 6
 ---
 
 ## Color schemes
-{: .d-inline-block }
 
 New
-{: .label .label-green }
 
 Just the Docs supports two color schemes: light (default), and dark.
 
 To enable a color scheme, set the `color_scheme` parameter in your site's `_config.yml` file:
 
 #### Example
-{: .no_toc }
 
 ```yaml
 # Color scheme currently only supports "dark" or nil (default)
@@ -37,7 +34,6 @@ To customize your site’s aesthetic, open `_sass/custom/custom.scss` in your ed
 For example, to change the link color from the purple default to blue, open `_sass/custom/custom.css` and find the `$link-color` variable on line `50`. Uncomment it, and change its value to our `$blue-000` variable, or another shade of your choosing.
 
 #### Example
-{: .no_toc }
 
 ```scss
 // ...
@@ -53,12 +49,13 @@ _Note:_ Editing the variables directly in `_sass/support/variables.scss` is not 
 
 ## Override styles
 
-For styles that aren't defined as a variables, you may want to modify specific CSS classes. To add your own CSS overrides at the end of the cascade, edit `_sass/overrides.scss`. This will allow for all overrides to be kept in a single file, and for any upstream changes to still be applied.
+For styles that aren't defined as a variables, you may want to modify specific CSS classes. 
+To add your own CSS overrides at the end of the cascade, edit `_sass/overrides.scss`. 
+This will allow for all overrides to be kept in a single file, and for any upstream changes to still be applied.
 
 For example, if you'd like to add your own styles for printing a page, you could add the following styles.
 
 #### Example
-{: .no_toc }
 
 ```scss
 // Print-only styles.

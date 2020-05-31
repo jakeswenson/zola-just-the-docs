@@ -5,5 +5,15 @@
     "env": {
       "ZOLA_VERSION": "0.11.0"
     }
-  }
+  },
+  "builds": [
+    {
+      "src": "config.toml",
+      "use": "@vercel/static-build",
+      "config": {
+        "zeroConfig": true,
+        "framework": "zola"
+      }
+    }
+  ]
 }

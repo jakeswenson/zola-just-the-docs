@@ -8,10 +8,8 @@ description = "Just the Docs is a responsive Jekyll theme with built-in search t
 
 Just the Docs gives your documentation a jumpstart with a responsive Zola theme that is easily customizable.
 
-<div class="btn btn-primary" >
-
 [Get started now](#getting-started) 
-</div> <!--{: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } -->
+<!--{: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } -->
 
 [View it on GitHub](https://github.com/jakeswenson/zola-just-the-docs) <!-- {: .btn .fs-5 .mb-4 .mb-md-0 } -->
 
@@ -70,17 +68,18 @@ If you're hosting your site on GitHub Pages, [set up GitHub Pages and Jekyll loc
 
 ### Configure Just the Docs
 
-- [See configuration options]({{ site.baseurl }}{% link docs/configuration.md %})
+- [See configuration options](configuration.md)
 
 ---
 
 ## About the project
 
-Just the Docs is &copy; 2017-2019 by [Patrick Marsceill](http://patrickmarsceill.com).
+Zola Just the Docs is &copy; 2020 by [Jake Swenson](https://github.com/jakeswenson).
 
 ### License
 
-Just the Docs is distributed by an [MIT license](https://github.com/pmarsceill/just-the-docs/tree/master/LICENSE.txt).
+Zola Just the Docs is distributed by an [MIT license](https://github.com/jakeswenson/zola-just-the-docs/blob/master/LICENSE).
+This theme is based off of the [`Just the Docs`](https://github.com/pmarsceill/just-the-docs) theme by [pmarsceill](https://www.thismodernweb.com/).
 
 ### Contributing
 
