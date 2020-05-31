@@ -14,7 +14,7 @@ highlight_code = true
 build_search_index = true
 
 [extra]
-footer = "Copyright &copy; 2020 Jake Swenson. Distributed by an <a href=\"https://github.com/jakeswenson/zola-just-the-docs/tree/master/LICENSE.txt\">MIT license.</a>"
+footer = "Copyright &copy; 2020 Jake Swenson. Distributed by an <a href=\"https://github.com/jakeswenson/zola-just-the-docs/tree/master/LICENSE\">MIT license.</a>"
 links = [
   { title = 'GitHub', url = 'https://github.com/jakeswenson/zola-just-the-docs/' },
   { title = 'Demo', url = 'https://zola-jtd-demo.jakeswenson.now.sh/' }

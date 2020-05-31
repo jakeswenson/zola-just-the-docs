@@ -3,7 +3,7 @@ description = "A port of the great `Just the Docs` theme from jekyll"
 license = "MIT"
 homepage = "https://github.com/jakeswenson/zola-just-the-docs"
 # The minimum version of Zola required
-min_version = "0.10.0"
+min_version = "0.11.0"
 # An optional live demo URL
 demo = "https://zola-jtd-demo.jakeswenson.now.sh/"
 
